@@ -2,6 +2,7 @@ const User = require('../models/user.js');
 
 const handleErrors = (err) =>{
     let errors = {email: "", password: ""}
+    console.log(err);
 
     if (err.code === 11000) {
         errors.email = 'that email is already registered';

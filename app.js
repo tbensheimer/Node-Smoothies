@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const { requireAuth } = require('./middleware/authMiddleware');
 
 const app = express();
 mongoose.set({strictQuery: true});
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.get('/smoothies', (req, res) => {
+app.get('/smoothies', requireAuth, (req, res) => {
     res.render('smoothies');
 })
 

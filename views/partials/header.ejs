@@ -16,6 +16,7 @@
       <li>Welcome, <%= user.email %> </li>
     <li><h4><a href="/logout">Logout</a></h4></li>
     <% } else { %>
+    <li>Not logged in</li>
     <li><h4><a href="/signup">Sign Up</a></h4></li>
     <li><h4><a class="btn" href="/login">Login</a></h4></li>
     <% } %>
